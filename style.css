@@ -4,7 +4,8 @@ body {
 
 canvas {
     background-color: burlywood;
-    border: 2px solid black;
+    border: 4px solid white;
+    border-style: inset;
 }
 
 .flex-container {

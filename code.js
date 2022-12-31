@@ -15,8 +15,13 @@ const canvasWidth = feigenCanvas.width;
 const canvasHeight = feigenCanvas.height;
 
 //this app parameters
-const funcRangeX = 3;
-const funcRangeY = 1.5;
+const funcMinX = 0;
+const funcMaxX = 3.5;
+const funcMinY = 0;
+const funcMaxY = 1.5;
+
+const funcRangeX = funcMaxX - funcMinX;
+const funcRangeY = funcMaxY - funcMinY;
 
 const deltaX = funcRangeX/canvasWidth;
 const deltaY = funcRangeY/canvasHeight;
@@ -38,7 +43,7 @@ function feigen(population, feedback) {
 
 for (range=deltaX;range<funcRangeX;range+=deltaX) {
     feed = range;
-    numIterations = 50;
+    numIterations = 100;
     pop = 0.3;
     for (index=1;index<numIterations;index++) {
         setPixel(feed,pop);
