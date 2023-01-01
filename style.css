@@ -2,13 +2,27 @@ body {
     background-color: bisque;
 }
 
+button {
+    border-radius: 1em;;
+    padding: 2em;
+}
+
 canvas {
     background-color: burlywood;
-    border: 4px solid white;
-    border-style: inset;
+    border: 2px solid black;
+    width: 95%;
 }
+
 
 .flex-container {
     display: flex;
+    flex-direction: column;
     padding: 3em;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 6em;
 }

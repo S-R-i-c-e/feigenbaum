@@ -11,26 +11,26 @@ function roundDP(number, accuracy) {
   }
 
 // system parameters
-const canvasWidth = feigenCanvas.width;
-const canvasHeight = feigenCanvas.height;
+const viewSurfaceWidth = feigenCanvas.width;
+const viewSurfaceHeight = feigenCanvas.height;
 
 //this app parameters
 const funcMinX = 0;
-const funcMaxX = 3.5;
+const funcMaxX = 3.51;
 const funcMinY = 0;
 const funcMaxY = 1.5;
 
 const funcRangeX = funcMaxX - funcMinX;
 const funcRangeY = funcMaxY - funcMinY;
 
-const deltaX = funcRangeX/canvasWidth;
-const deltaY = funcRangeY/canvasHeight;
+const deltaX = funcRangeX/viewSurfaceWidth;
+const deltaY = funcRangeY/viewSurfaceHeight;
 
 function canvasX(x) {
     return Math.round(x/deltaX);
 }
 function canvasY(y) {
-    return canvasHeight - Math.round((y/deltaY));
+    return viewSurfaceHeight - Math.round((y/deltaY));
 }
 
 function setPixel(x,y) {
@@ -41,12 +41,16 @@ function feigen(population, feedback) {
     return population + population * feedback * (1-population);
 }
 
-for (range=deltaX;range<funcRangeX;range+=deltaX) {
-    feed = range;
-    numIterations = 100;
-    pop = 0.3;
-    for (index=1;index<numIterations;index++) {
-        setPixel(feed,pop);
-        pop = feigen(pop, feed);
+function drawFeigen () {
+    for (range=deltaX;range<funcRangeX;range+=deltaX) {
+        feed = range;
+        numIterations = 100;
+        pop = 0.3;
+        for (index=1;index<numIterations;index++) {
+            setPixel(feed,pop);
+            pop = feigen(pop, feed);
+        }
     }
 }
+
+drawFeigen();
