@@ -5,6 +5,7 @@ const feigenContext = feigenCanvas.getContext("2d");
 
 feigenContext.font = "9px Arial";
 
+// roundDP(number real, accuracy +ve integer) rounds number to the number of places defined by accuracy
 function roundDP(number, accuracy) {
     const mult = 10 ** accuracy;
     return Math.round(number * mult) / mult;

@@ -4,16 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./style.css">
     <title>Feigenbaum Diagram</title>
 </head>
 <body>
     <main class="flex-container">
+        <h1>Feigenbaum Diagram</h1>
+        <hr>
+        <p>The apparently straightforward equation</p>
+        <p class="equation"><em>x<sub>n+1</sub> = r x<sub>n</sub> (1 - x<sub>n</sub>)</em></p>
+        <p>iterated for r &lt;1 will tend toward the limit 1.</p>
         <canvas id="feigenbaum-diagram" width="750" height="750"></canvas>
         <hr>
         <div id="buttons-container">
-            <button>BUTTON1</button>
+<!-- 
+           <button>BUTTON1</button>
             <button>BUTTON2</button>
+-->
         </div>
     </main>
     <script src="./code.js"></script>
